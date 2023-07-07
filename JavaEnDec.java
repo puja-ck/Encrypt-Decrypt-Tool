@@ -28,7 +28,7 @@ import javax.crypto.spec.DESedeKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.swing.JButton;
 import java.awt.Color;
-import javax.swing.UIManager;
+// import javax.swing.UIManager;
 
 public class JavaEnDec extends JFrame {
 
@@ -239,3 +239,4 @@ public class JavaEnDec extends JFrame {
         return null;
     }
 }
+

@@ -1,0 +1,17 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- azure-pipelines3
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: javac *.java
+  displayName: 'compile script'
+
+- script: jar cfm .jar manifest.txt *.class
+  displayName: 'generate jar file'

@@ -1,0 +1,23 @@
+name: receive data
+
+on:
+  workflow_run:
+    workflows: ["send data"]
+    types:
+      - completed
+
+jobs:
+    receive-data-test:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        - name: Download Artifacts
+          uses: actions/download-artifact@v2
+          with:
+            name: my-artifacts  # Name of the artifact to download
+  
+        - name: Show Artifact Contents
+          run: |
+            cat my-artifacts/sample.txt

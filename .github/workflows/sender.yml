@@ -23,7 +23,7 @@ jobs:
           echo hello
 
       - name: Publish Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: my-artifacts  # Name of the artifact
           path: my-artifacts  # Path to the artifacts to be uploaded

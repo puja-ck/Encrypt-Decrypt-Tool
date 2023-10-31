@@ -1,0 +1,30 @@
+name: send data
+
+on:
+    push:
+        branches: 
+          - yml_temp_test
+
+jobs:
+  send-data-test:
+    runs-on: ubuntu-latest
+
+    # strategy:
+    #   matrix:
+    #     location: [Siliguri]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build and generate artifacts
+        run: |
+          mkdir my-artifacts
+          echo "This is a sample artifact content" > my-artifacts/sample.txt
+          echo hello
+
+      - name: Publish Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifacts  # Name of the artifact
+          path: my-artifacts  # Path to the artifacts to be uploaded

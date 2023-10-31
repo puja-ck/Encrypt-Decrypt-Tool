@@ -3,7 +3,7 @@ name: send data
 on:
     push:
         branches: 
-          - yml_temp_test
+          - master
 
 jobs:
   send-data-test:
